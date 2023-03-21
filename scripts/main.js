@@ -1,6 +1,23 @@
+//use buttons to switch between charts for race, education and languages spoken
+let raceButton = document.getElementById("race");
+let educationButton = document.getElementById("education");
+let languagesButton = document.getElementById("languages");
 
+let educationChart = function(){
+  document.getElementById("test").innerHTML = "graph for income by education level";
+  console.log("change to education chart");
+}
 
-const labelIncomeGroup = ["Below 1,000",
+let languagesChart = function(){
+  document.getElementById("test").innerHTML = "graph for income by language spoken";
+  console.log("change to language chart");
+}
+
+educationButton.addEventListener("click", educationChart);
+languagesButton.addEventListener("click", languagesChart);
+
+//chart for expenditure vs income group
+const labelIncomeGroup = ["Below 1,000", //labels used for horizontal axis
 "1,000 - 1,999",
 "2,000 - 2,999",
 "3,000 - 3,999",
@@ -22,8 +39,6 @@ const dataObj = {
   datasets: [
     {   label: "Average Expenditure",
         data: AverageExpenditure,
-        //label: ,// uncomment this line and set this to "Age"
-        //data: ,// uncomment this line and set this to beingOld
         borderWidth: 2,
         backgroundColor: "hsla(49,98%,72%,0.8)",
         borderColor: "hsla(30,100%,50%,1)"
