@@ -15,7 +15,7 @@ h2 {
 /* CSS */
 button {
   appearance: none;
-  background-color: #b45309;
+  background-color: #5737FA;
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
@@ -32,7 +32,7 @@ button {
 }
 
 button:hover {
-  background-color: #92400e;
+  background-color: #5737AA;
 }
 
 #navBar {
