@@ -44,8 +44,8 @@ new Chart("avgExpenditure-incomegroup-barchart",
           display: true,
           text: ["average monthly expenditure by monthly income group"],//set this to 'Predicting likelihood of deepfake sharing','for Older People'
           fontFamily: "TrebuchetMS",
-          fontSize: 24,
-          fontColor: 'rgb(0,120,0)',
+          fontSize: 16,
+          fontColor: "white",
       }
   }
 });
