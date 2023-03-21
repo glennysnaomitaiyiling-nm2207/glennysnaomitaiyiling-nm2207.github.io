@@ -4,15 +4,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: white;
   padding-left: 12px;
-  padding-top: 4px;
-}
-
-.mouse {
-  font-size: 24px;
-}
-
-.counter {
-  color: #fbbf24;
+  padding-top: 20px;
 }
 
 h2 {
@@ -40,4 +32,28 @@ button {
 
 button:hover {
   background-color: #92400e;
+}
+
+#navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  background-color: #dddddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
