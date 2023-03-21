@@ -4,7 +4,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: white;
   padding-left: 12px;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 h2 {
@@ -56,4 +56,8 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+a {
+  color: white;
 }
