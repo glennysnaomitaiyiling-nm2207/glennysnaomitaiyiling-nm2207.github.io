@@ -12,6 +12,45 @@
       <li><a href="finalprojDocumentation.html">documentation</a></li>
     </ul>
     <h1>final project documentation</h1>
+
+    <h2>week 11</h2>
+    <h3>data</h3>
+    <p>i managed to find a few more datasets that are revelant to my project, and continued reading research papers on the topic
+      to get a clearer idea and solidify the flow of the story. on top of the data I had already found, (wealth expenditure group by income group, no. of households in each group), I found some new data including distribution of wealth (% of national wealth owned by top 1%, top 10%, bottom 50%, from 1969-2021) from World Inequality database:
+      <a href="https://wid.world/country/singapore/">link</a>. This website also provides data on average income earned by top 1%, top 10% and bottom 50%, from 1969-2021.
+      The Department of Statistics Singapore website also has income data with many different variables (ethnicity, gender, district, predominant household language, type of dwelling, occupation, highest qualification of head of household), as well as income change over time.
+    </p>
+    <h3>visualisations</h3>
+    <p>
+      the first part of the story will focus on changes over time in GDP, income, inflation and cost of living to provide an overview
+      of Singapore's financial situation and compare how much each factor has changed in relation to the others. this will be a line graph, ideally all on the same axis for easy comparison.
+      since these values will probably be very different from one another, I will try to either find data that gives percentage changes, or convert the values to percentage changes myself.
+      <br><br>
+      next, i will illustrate the issue of wealth inqeuality using the gini coefficient and data on wealth dsitribution and average income + income distribution among the top 1%, top 10% and bottom 50%. for both wealth and income
+      distribution, i will use a line chart to show the changes over time. from what i've found, the average income of the top 1% has increased much more drastically than the bottom 50%. the share of wealth in the top 1% has increased
+      slightly to 31%, while that of the bottom 50% has been relatively stagnant (slight decrease) around 4.5%. to further illustrate wealth distribution, i plan to use a visualisaation that can properly showcase this, perhaps a treemap or a sunburst diagram (main nodes
+      will be top 10% and bottom 90%, leaf nodes will be top 1% + subsequent 9% and middle 40% + bottom 50% respectively, angle of node determined by % of wealth share). however, this visualisation will have to be created using something other than ChartJS, maybe FusionCharts.
+      these
+      <br><br>
+      for the data on expenditure by income group, i plan to use a bubble chart, where the x and y axes will be income group and expenditure group, and the size of the bubble indicates the proportion of expenditure in relation to income. however, 
+      the dataset only provide the average expenditure for each income group, so i will need to find the average income for each income group to calulate the proportion.
+      <br><br>
+      next, i will start to explore the distribution of income across different demographics (the ones listed above, found from Dpt of Statistics Singapore). The goal is to compare income earned by different groups
+      in each demographic. Ideally, this will be a section with a few different visualisation types and the user will be able to toggle between different variables (race, age, gender)
+      to update the charts. the charts here could include stacked bar, box and whisker, bubble chart and donut. For example, for ethnicity: box and whisker will show minimum, maximum, median/average income for each ethnic group. 
+      stacked bar will have income groups on the x-axis, each group will have a stacked bar showing the number of each ethnicity in that group. bubble chart will have the income group as the x-axis and number of households as the y-axis,
+      with different coloured bubbles for each ethnicity and the size will indicate the proportion of the ethnic group that belongs to that income group. However, this combination of charts might not work for all the factors, so I will have to 
+      look into that further. I may also try to do a geographical visualisation for income by district, like a chloropleth map or bubble map, which will also have to be done with a different library.
+      <br><br>
+      <h4>challenges</h4>
+      <p>
+        Although the TAs have said that we can send our csv files to be hosted so that we can use fetch, I realised that I have a lot of different datasets spread across many different files. I wanted to see if I could find another way to access my data
+        and avoid sending over 20 different files unless I absolutely have to 😳. I found out that I can use chartjs-plugin-datasource.js and sheetJS to get data from xlsx files quite easily!
+        <br><br>
+        i haven't been able to style my site to look the way i want it yet because i find it hard to write out css code without knowing exactly what i want and being able to visualise it first, especially when i don't have all the content on the page yet.
+        i decided to do a rough design of my site on figma first just so that i can decide on the look and interactions, and then figure out how to code it in css after that. if i start to run out of time, perhaps i might look for a template instead!
+      </p>
+    </p>
     <h2>week 10</h2>
     <h4>1. what is your project about?</h4> 
     <p>exploring the issues income inequality, cost of living in singapore</p>
