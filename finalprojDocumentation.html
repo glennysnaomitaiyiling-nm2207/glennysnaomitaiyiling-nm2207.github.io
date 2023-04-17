@@ -3,7 +3,7 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <title>My NM2207 GitHub Portfolio</title>
-    <script src="scripts/main.js"></script>
+    <!-- <script src="scripts/main.js"></script> -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -11,109 +11,130 @@
       <li><a href="index.html">home</a></li>
       <li><a href="finalprojDocumentation.html">documentation</a></li>
     </ul>
-    <h1>final project documentation</h1>
 
-    <h2>week 11</h2>
-    <h3>data</h3>
-    <p>i managed to find a few more datasets that are revelant to my project, and continued reading research papers on the topic
-      to get a clearer idea and solidify the flow of the story. on top of the data I had already found, (wealth expenditure group by income group, no. of households in each group), I found some new data including distribution of wealth (% of national wealth owned by top 1%, top 10%, bottom 50%, from 1969-2021) from World Inequality database:
-      <a href="https://wid.world/country/singapore/">link</a>. This website also provides data on average income earned by top 1%, top 10% and bottom 50%, from 1969-2021.
-      The Department of Statistics Singapore website also has income data with many different variables (ethnicity, gender, district, predominant household language, type of dwelling, occupation, highest qualification of head of household), as well as income change over time.
-    </p>
-    <h3>visualisations</h3>
-    <p>
-      the first part of the story will focus on changes over time in GDP, income, inflation and cost of living to provide an overview
-      of Singapore's financial situation and compare how much each factor has changed in relation to the others. this will be a line graph, ideally all on the same axis for easy comparison.
-      since these values will probably be very different from one another, I will try to either find data that gives percentage changes, or convert the values to percentage changes myself.
-      <br><br>
-      next, i will illustrate the issue of wealth inqeuality using the gini coefficient and data on wealth distribution and average income + income distribution among the top 1%, top 10% and bottom 50%. for both wealth and income
-      distribution, i will use a line chart to show the changes over time. from what i've found, the average income of the top 1% has increased much more drastically than the bottom 50%. the share of wealth in the top 1% has increased
-      slightly to 31%, while that of the bottom 50% has been relatively stagnant (slight decrease) around 4.5%. to further illustrate wealth distribution, i plan to use a visualisation that can properly showcase this, perhaps a treemap or a sunburst diagram (main nodes
-      will be top 10% and bottom 90%, leaf nodes will be top 1% + subsequent 9% and middle 40% + bottom 50% respectively, angle of node determined by % of wealth share). however, this visualisation will have to be created using something other than ChartJS, maybe FusionCharts.
-      these
-      <br><br>
-      for the data on expenditure by income group, i plan to use a bubble chart, where the x and y axes will be income group and expenditure group, and the size of the bubble indicates the proportion of expenditure in relation to income. however, 
-      the dataset only provide the average expenditure for each income group, so i will need to find the average income for each income group to calulate the proportion.
-      <br><br>
-      next, i will start to explore the distribution of income across different demographics (the ones listed above, found from Dpt of Statistics Singapore). The goal is to compare income earned by different groups
-      in each demographic. Ideally, this will be a section with a few different visualisation types and the user will be able to toggle between different variables (race, age, gender)
-      to update the charts. the charts here could include stacked bar, box and whisker, bubble chart and donut. For example, for ethnicity: box and whisker will show minimum, maximum, median/average income for each ethnic group. 
-      stacked bar will have income groups on the x-axis, each group will have a stacked bar showing the number of each ethnicity in that group. bubble chart will have the income group as the x-axis and number of households as the y-axis,
-      with different coloured bubbles for each ethnicity and the size will indicate the proportion of the ethnic group that belongs to that income group. However, this combination of charts might not work for all the factors, so I will have to 
-      look into that further. I may also try to do a geographical visualisation for income by district, like a chloropleth map or bubble map, which will also have to be done with a different library.
-      <br><br>
-      <h4>challenges</h4>
-      <p>
-        Although the TAs have said that we can send our csv files to be hosted so that we can use fetch, I realised that I have a lot of different datasets spread across many different files. I wanted to see if I could find another way to access my data
-        and avoid sending over 20 different files unless I absolutely have to 😳. I found out that I can use chartjs-plugin-datasource.js and sheetJS to get data from xlsx files quite easily!
-        <br><br>
-        i haven't been able to style my site to look the way i want it yet because i find it hard to write out css code without knowing exactly what i want and being able to visualise it first, especially when i don't have all the content on the page yet.
-        i decided to do a rough design of my site on figma first just so that i can decide on the look and interactions, and then figure out how to code it in css after that. if i start to run out of time, perhaps i might look for a template instead!
+    <ul id="scrollNav">
+      <li><a a href="#weekTwelve">week 12 diary entry</a></li>
+      <li><a a href="#weekEleven">week 11 diary entry</a></li>
+      <li><a a href="#weekTen">week 10 diary entry</a></li>
+      <li><a a href="#weekNine">week 9 diary entry</a></li>
+    </ul>
+
+    <div id="content">
+
+      <h1>final project documentation</h1>
+
+      <h2 id="weekTwelve">week 12</h2>
+      <p>continuing from the previous week, i have since learned that using sheetJS and chartjs-plugin-datasource
+        does not solve the issue that i was having, and i will continue to get the same error
+        regardless of what method i use to access my data. so i will need to host them anyway. i have figured out how to do this
+        on amazon web services. i will probably also not use sheetjs and chartjs-plugin-datasource anymore
+        because using those plugins changes some parts of the code for creating the charts in a way
+        which i'm not used to, and sometimes i can't always find a solution in the documentation. i will try to 
+        stick to using fetch i think?
       </p>
-    </p>
-    <h2>week 10</h2>
-    <h4>1. what is your project about?</h4> 
-    <p>exploring the issues income inequality, cost of living in singapore</p>
-    <h4>2. What is the data you plan to use?</h4>
-    <p>
-      1.Proportion of population in each income group
+
+      <h2 id="weekEleven">week 11</h2>
+      <h3>data</h3>
+      <p>i managed to find a few more datasets that are revelant to my project, and continued reading research papers on the topic
+        to get a clearer idea and solidify the flow of the story. on top of the data I had already found, (wealth expenditure group by income group, no. of households in each group), I found some new data including distribution of wealth (% of national wealth owned by top 1%, top 10%, bottom 50%, from 1969-2021) from World Inequality database:
+        <a href="https://wid.world/country/singapore/">link</a>. This website also provides data on average income earned by top 1%, top 10% and bottom 50%, from 1969-2021.
+        The Department of Statistics Singapore website also has income data with many different variables (ethnicity, gender, district, predominant household language, type of dwelling, occupation, highest qualification of head of household), as well as income change over time.
+      </p>
+      <h3>visualisations</h3>
+      <p>
+        the first part of the story will focus on changes over time in GDP, income, inflation and cost of living to provide an overview
+        of Singapore's financial situation and compare how much each factor has changed in relation to the others. this will be a line graph, ideally all on the same axis for easy comparison.
+        since these values will probably be very different from one another, I will try to either find data that gives percentage changes, or convert the values to percentage changes myself.
+        <br><br>
+        next, i will illustrate the issue of wealth inqeuality using the gini coefficient and data on wealth distribution and average income + income distribution among the top 1%, top 10% and bottom 50%. for both wealth and income
+        distribution, i will use a line chart to show the changes over time. from what i've found, the average income of the top 1% has increased much more drastically than the bottom 50%. the share of wealth in the top 1% has increased
+        slightly to 31%, while that of the bottom 50% has been relatively stagnant (slight decrease) around 4.5%. to further illustrate wealth distribution, i plan to use a visualisation that can properly showcase this, perhaps a treemap or a sunburst diagram (main nodes
+        will be top 10% and bottom 90%, leaf nodes will be top 1% + subsequent 9% and middle 40% + bottom 50% respectively, angle of node determined by % of wealth share). however, this visualisation will have to be created using something other than ChartJS, maybe FusionCharts.
+        these
+        <br><br>
+        for the data on expenditure by income group, i plan to use a bubble chart, where the x and y axes will be income group and expenditure group, and the size of the bubble indicates the proportion of expenditure in relation to income. however, 
+        the dataset only provide the average expenditure for each income group, so i will need to find the average income for each income group to calulate the proportion.
+        <br><br>
+        next, i will start to explore the distribution of income across different demographics (the ones listed above, found from Dpt of Statistics Singapore). The goal is to compare income earned by different groups
+        in each demographic. Ideally, this will be a section with a few different visualisation types and the user will be able to toggle between different variables (race, age, gender)
+        to update the charts. the charts here could include stacked bar, box and whisker, bubble chart and donut. For example, for ethnicity: box and whisker will show minimum, maximum, median/average income for each ethnic group. 
+        stacked bar will have income groups on the x-axis, each group will have a stacked bar showing the number of each ethnicity in that group. bubble chart will have the income group as the x-axis and number of households as the y-axis,
+        with different coloured bubbles for each ethnicity and the size will indicate the proportion of the ethnic group that belongs to that income group. However, this combination of charts might not work for all the factors, so I will have to 
+        look into that further. I may also try to do a geographical visualisation for income by district, like a chloropleth map or bubble map, which will also have to be done with a different library.
+        <br><br>
+        <h4>challenges</h4>
+        <p>
+          Although the TAs have said that we can send our csv files to be hosted so that we can use fetch, I realised that I have a lot of different datasets spread across many different files. I wanted to see if I could find another way to access my data
+          and avoid sending over 20 different files unless I absolutely have to 😳. I found out that I can use chartjs-plugin-datasource.js and sheetJS to get data from xlsx files quite easily!
+          <br><br>
+          i haven't been able to style my site to look the way i want it yet because i find it hard to write out css code without knowing exactly what i want and being able to visualise it first, especially when i don't have all the content on the page yet.
+          i decided to do a rough design of my site on figma first just so that i can decide on the look and interactions, and then figure out how to code it in css after that. if i start to run out of time, perhaps i might look for a template instead!
+        </p>
+      </p>
+      <h2 id="weekTen">week 10</h2>
+      <h4>1. what is your project about?</h4> 
+      <p>exploring the issues income inequality, cost of living in singapore</p>
+      <h4>2. What is the data you plan to use?</h4>
+      <p>
+        1.Proportion of population in each income group
+        <br>
+        2.Income levels by race, gender, education level
+        <br>
+        3.Expenditure group by income group  to show proportion of income that is spent by each income group:
+        <a href="https://tablebuilder.singstat.gov.sg/table/CT/16903">link</a>
+        <br>
+        4.Changes in inflation, cost of living and income over time
+        <br>
+        5.Data about financial assistance schemes in singapore?
+        </p>
+        <h4>3. What is the question you plan to answer?</h4>
+        <p>How severe is the income inequality situation in Singapore?</p>
+        <h4>4. Why is this an important question?</h4>
+        <p>While income inequality in Singapore may not be considered one of the highest in the world, Singapore is ranked one of the most unequal countries among wealthy ones, second only to Hong Kong (according to Teo You Yenn, 2018) In 2016, the Gini coefficient in Singapore was 0.458, and the per capita income for the wealthiest 10% of households is $12773, 23 times more than the lowest 10% households ($543). There is also a the lack of a clear poverty line in Singapore, which makes it harder to determine who and how much of the country can be considered poor and requires additional assistance. 
+          <br><br>
+          This, together with Singapore’s overall good economic performance, results in a situation where the ‘poor’ in Singapore are obscured and, according to Nathan Peng (2019), there is a divergence between largely stable macro-trends and “felt” inequality experienced by citizens. While the state promotes ideas of meritocracy and equal opportunities, it is precisely these narratives that allow the issue of poverty to be seen as one resulting from individual flaws rather than structural ones (hence, the idea that poor people are simply lazy) (Smith, et al. 2015).
+          <br><br>
+          However, in reality there are factors which systematically disadvantage some parts of the population over others, such as intersections of poverty with race and gender. 
+          <br><br>
+          According to the Census of Population 2010: Statistical Release 2 – Households and Housing, the median income of Singaporean Malays, SGD 3,844 is well below the national average of SGD 5,000 SGD, and below that of Chinese and Indian Singaporeans, whose median incomes were SGD 7,432 and SGD 5,370 respectively. Other data also show how educational performance and sense of belonging are continuously tied to socio-economic position (Peng, 2019)
+        </p>
+        <h4>5. Which rows and columns of the dataset do you plan to use, to answer this question?</h4>
+        <p>using every column of the "number of resident households" row, i can create a chart to show the distribution of households in each income group to get a better idea of the wealth distribution in Singapore, and what proportion of households falls below the estimated $2906/month living wage (LKY school of Public Policy).
+          <br><br>
+          i will first try to find the average income for each income group. using this and the average monthly expenditure for each income group, i will calculate the average proportion of income spent by each group. this will show that although lower income households spend much less than high income groups, there is a limit to how much they can reduce spending (and it still takes up a large part of their income -> harder for them to save money)
+        </p>
+        <h4>challenges</h4>
+        <p>
+          i have yet to find a single, comprehensive dataset that contains multiple types of data that i plan to use, and i have been having trouble finding some of the information that i need. however, i found a lot of research papers on different aspects of the topic that reference data from multiple sources, although it's taking a long time to read through these papers and look through all the references.
+        </p>
+      <h2 id="weekNine">week 9</h2>
+      <a href="https://docs.google.com/document/d/1qskgjRBPMZALDOUOAR7jQL6JcrCLMdOKvgZI0qXkN28/edit"> link to table of concepts implemented</a>
       <br>
-      2.Income levels by race, gender, education level
+      <a href="https://docs.google.com/document/d/1cgq6HvwpTC2i6SdCoC_kcQggljyXXx68fg-Cdqb3MJA/edit">link to storyboard</a>
+      
+      <h4>what is your project about?</h4>
+      <p>The project is about the issue of income inequality in Singapore – why it happens, why it is important, how it affects citizens, why financial assistance implementations are effective or ineffective, what factors systemically disadvantage some people and restrict their socioeconomic mobility. I aim to explore wealth distribution in Singapore, (eg. average/median income, disparities in income across demographics like race, gender, level of education, etc) as well as changes in income, inflation and cost of living over time. </p>
+      <h4>What is the data you plan to use?</h4>
+      <p>
+      Proportion of population in each income group
       <br>
-      3.Expenditure group by income group  to show proportion of income that is spent by each income group:
+      Income levels by race, gender, education level
+      <br>
+      Quality of life by income level
+      <br>
+      Expenditure group by income group  to show proportion of income that is spent by each income group:
       <a href="https://tablebuilder.singstat.gov.sg/table/CT/16903">link</a>
       <br>
-      4.Changes in inflation, cost of living and income over time
+      Changes in inflation, cost of living and income over time
       <br>
-      5.Data about financial assistance schemes in singapore?
+      Data about financial assistance schemes in singapore?
       </p>
-      <h4>3. What is the question you plan to answer?</h4>
+      <h4>What is the question you plan to answer?</h4>
       <p>How severe is the income inequality situation in Singapore?</p>
-      <h4>4. Why is this an important question?</h4>
-      <p>While income inequality in Singapore may not be considered one of the highest in the world, Singapore is ranked one of the most unequal countries among wealthy ones, second only to Hong Kong (according to Teo You Yenn, 2018) In 2016, the Gini coefficient in Singapore was 0.458, and the per capita income for the wealthiest 10% of households is $12773, 23 times more than the lowest 10% households ($543). There is also a the lack of a clear poverty line in Singapore, which makes it harder to determine who and how much of the country can be considered poor and requires additional assistance. 
-        <br><br>
-        This, together with Singapore’s overall good economic performance, results in a situation where the ‘poor’ in Singapore are obscured and, according to Nathan Peng (2019), there is a divergence between largely stable macro-trends and “felt” inequality experienced by citizens. While the state promotes ideas of meritocracy and equal opportunities, it is precisely these narratives that allow the issue of poverty to be seen as one resulting from individual flaws rather than structural ones (hence, the idea that poor people are simply lazy) (Smith, et al. 2015).
-        <br><br>
-        However, in reality there are factors which systematically disadvantage some parts of the population over others, such as intersections of poverty with race and gender. 
-        <br><br>
-        According to the Census of Population 2010: Statistical Release 2 – Households and Housing, the median income of Singaporean Malays, SGD 3,844 is well below the national average of SGD 5,000 SGD, and below that of Chinese and Indian Singaporeans, whose median incomes were SGD 7,432 and SGD 5,370 respectively. Other data also show how educational performance and sense of belonging are continuously tied to socio-economic position (Peng, 2019)
-      </p>
-      <h4>5. Which rows and columns of the dataset do you plan to use, to answer this question?</h4>
-      <p>using every column of the "number of resident households" row, i can create a chart to show the distribution of households in each income group to get a better idea of the wealth distribution in Singapore, and what proportion of households falls below the estimated $2906/month living wage (LKY school of Public Policy).
-        <br><br>
-        i will first try to find the average income for each income group. using this and the average monthly expenditure for each income group, i will calculate the average proportion of income spent by each group. this will show that although lower income households spend much less than high income groups, there is a limit to how much they can reduce spending (and it still takes up a large part of their income -> harder for them to save money)
-      </p>
-      <h4>challenges</h4>
-      <p>
-        i have yet to find a single, comprehensive dataset that contains multiple types of data that i plan to use, and i have been having trouble finding some of the information that i need. however, i found a lot of research papers on different aspects of the topic that reference data from multiple sources, although it's taking a long time to read through these papers and look through all the references.
-      </p>
-    <h2>week 9</h2>
-    <a href="https://docs.google.com/document/d/1qskgjRBPMZALDOUOAR7jQL6JcrCLMdOKvgZI0qXkN28/edit"> link to table of concepts implemented</a>
-    <br>
-    <a href="https://docs.google.com/document/d/1cgq6HvwpTC2i6SdCoC_kcQggljyXXx68fg-Cdqb3MJA/edit">link to storyboard</a>
-    
-    <h4>what is your project about?</h4>
-    <p>The project is about the issue of income inequality in Singapore – why it happens, why it is important, how it affects citizens, why financial assistance implementations are effective or ineffective, what factors systemically disadvantage some people and restrict their socioeconomic mobility. I aim to explore wealth distribution in Singapore, (eg. average/median income, disparities in income across demographics like race, gender, level of education, etc) as well as changes in income, inflation and cost of living over time. </p>
-    <h4>What is the data you plan to use?</h4>
-    <p>
-    Proportion of population in each income group
-    <br>
-    Income levels by race, gender, education level
-    <br>
-    Quality of life by income level
-    <br>
-    Expenditure group by income group  to show proportion of income that is spent by each income group:
-    <a href="https://tablebuilder.singstat.gov.sg/table/CT/16903">link</a>
-    <br>
-    Changes in inflation, cost of living and income over time
-    <br>
-    Data about financial assistance schemes in singapore?
-    </p>
-    <h4>What is the question you plan to answer?</h4>
-    <p>How severe is the income inequality situation in Singapore?</p>
-    <h4>Why is this an important question?</h4>
-    <p>Singapore is a country that prides itself on great economic growth and good quality of life. While these things may be true, I believe there is still a significant portion of the population that falls through the cracks despite government measures, and that many peopple aren't aware of precisely because Singapore is a wealthy nation overall. I've also often heard the notion that poor people are poor simply because they haven't worked hard enough, and would like to question this idea by finding out other factors that could contribute to it.</p>
+      <h4>Why is this an important question?</h4>
+      <p>Singapore is a country that prides itself on great economic growth and good quality of life. While these things may be true, I believe there is still a significant portion of the population that falls through the cracks despite government measures, and that many peopple aren't aware of precisely because Singapore is a wealthy nation overall. I've also often heard the notion that poor people are poor simply because they haven't worked hard enough, and would like to question this idea by finding out other factors that could contribute to it.</p>
 
+  </div>
 
   </body>
 </html>
