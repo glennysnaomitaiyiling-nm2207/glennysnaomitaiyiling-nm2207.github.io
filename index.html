@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-    <title>My NM2207 GitHub Portfolio</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script type="text/javascript" src="xlsx.full.min.js"></script> -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.2/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource"></script>
+    <title>Glennys's NM2207 Final Project</title>
     <script defer type="text/javascript" src="scripts/main.js"></script>
+    <!-- <script type="text/javascript" src="chartjs-plugin-datasource.js"></script> -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -12,40 +18,214 @@
       <li><a href="finalprojDocumentation.html">documentation</a></li>
     </ul>
   
-    <h1>how severe is income ineqality in singapore?</h1>
-
-    <div id="blocks">
-      <h3>How has the financial situation changed over the years?</h3>
-      <p>While the average and median household income has likely increased, is it enough to make up for increases in inflation and cost of living?</p>
+    <div class="header">
+      <h1>Income inequality in Singapore</h1>
+      <h2>who gets the shorter end of the stick?</h2>
     </div>
-
-    <div id="canvas-container">
-      <canvas id="change-income-cost-inflation" width="400" height="400"></canvas> <!--Notice here we put the id of the "new chart" we created in the script part.-->
-      <p>placeholder: linechart, % change in household income, inflation and cost of living</p>
+    
+      <div class="textContainer">
+        <p>Shortly after achieving independence, Singapore began its quest for rapid economic development -- a
+          quest that was alrgely successful and would reap benefits for each Singaporean and the society as a whole. 
+          However, this rapid tide of growth and material wealth favored some far more than others. 
+          During 2005-2007, the average income for families in the bottom decile of the income distribution 
+          increased just 3-4% while that of the topmost decile grew by 6-11%.
+          <br><br>
+          Dhamani, 2008
+        </p>
+      </div>
+      
+      <div id="giniSection">
+        <div class="textContainer">
+          <p>The lack of a definite poverty line, together with Singapore’s overall good economic performance, results in a situation where the ‘poor’ in Singapore are obscured and, according to Nathan Peng (2019), there is a divergence between largely stable macro-trends and “felt” inequality experienced by citizens. While the state promotes ideas of meritocracy and equal opportunities, it is precisely these narratives that allow the issue of poverty to be seen as one resulting from individual flaws rather than structural ones.
+          </p>
+          <p>While income inequality in Singapore may not be considered the highest in the world,
+             Singapore is ranked one of the most unequal countries among wealthy ones and among those in Asia, 
+             second only to Hong Kong. In 2017, the Gini coefficient in Singapore was 0.458. </p>
+        </div>
+        <div id="giniMapContainer">
+          <div id="giniMap"></div>
+          <p class="sources">
+            Source: <a href="https://www.cia.gov/the-world-factbook/field/gini-index-coefficient-distribution-of-family-income/country-comparison">The World Factbook</a> Central Intelligence Agency
+          </p>
+          <div id="canvas-container">
+            <div id="buttons"></div>
+            <canvas id="giniBarChart"></canvas> <!--Notice here we put the id of the "new chart" we created in the script part.-->
+          </div>
+        </div>
+      </div>
+      
+      <div class="textContainer">
+        <p>Indeed, the nation as a whole has achieved massive economic gains not only in GDP (currently 297 billion USD, 2022),
+          but also in the overall average monthly income earned by resident households. However, a deeper investigation into income statistics
+          reveals that these gains are not enjoyed equally across the country.
+        </p>
+        <p>
+          From 1969 to 2019, the average annual pre-tax income (this includes income from all sources)
+          of the richest 1% of the population increased dramatically more than the rest of the population. The average income of the
+          richest 10% as a whole has also risen significantly. That of the bottom 50% has actually increased
+          by more than 200%, but this amount looks relatively insignificant when situated against the increases for
+          the other segments.
+        </p>
+      </div>
+        
+      <section id="section2">
+        <div class="incomeChartContainer">
+          <div id="canvas-container" >
+            <canvas id="income-change"></canvas> <!--Notice here we put the id of the "new chart" we created in the script part.-->
+            <p class="sources">
+              Source: 
+              <a href="https://tablebuilder.singstat.gov.sg/table/CT/17823">Department of Statistics Singapore</a>
+              </p>
+          </div>
+          <div id="canvas-container">
+            <canvas id="income-distribution-overtime"></canvas>
+            <p class="sources">Source:
+              <a href="https://wid.world/country/singapore/"> World Inequality Database</a>
+            </p>
+          </div>
+        </div> 
+        <div class="textContainerNoBg">
+          <p>The distribution of incomes in Singapore also appears to be skewed in such a way that
+            about 70% of households have a monthly income per capita that is lower than the national average,
+            and the average of the 10th decile is nearly twice that of the 9th -- resulting in an average value that is
+            much higher than the median.
+          </p>
+        </div>
+       
+        <div class="incomeChartContainer">
+        <div id="canvas-container">
+          <canvas id="avgIncomeByDecile"></canvas>
+          <p class="sources">
+          Source: 
+          <a href="https://tablebuilder.singstat.gov.sg/table/CT/17823">Department of Statistics Singapore</a>
+          </p>
+        </div>
+      </div>
+      <div class="textContainerNoBg">
+        <p>in 2022 the per capita income for the wealthiest 10% of households is $13417, 21 times more than the lowest 10% households ($632). There is also a the lack of a clear poverty line in Singapore, which makes it harder to determine who and how much of the country can be considered poor and requires additional assistance.
+          A research article conducted by the Lee Kuan Yew
+          School of Public Policy claimed that a 'reasonable starting point’ for a living wage in Singapore
+          is about $1600 per capita per month, for a household with at least 1 working adult and 1 child.
+          ’. Using this as a baseline, nearly 30% of households earn less than required for these types of households to meet their basic needs.
+        </p>
+      </div>
+      <div id="'canvas-container">
+      <div id="wealthshareSunburst"></div>
+      <p class="sources">Source:
+        <a href="https://wid.world/country/singapore/"> World Inequality Database</a>
+      </p>
     </div>
+      </section>
 
-    <div id="blocks">
-      <h3>How are different groups of people affected?</h3>
+      <p class="textContainer">
+        The factors and nuances behind income inequality are complex and multi-faceted. Education and racial inequality
+        have been well studied as contributors and perpetuators on income inequality. People from low socio-economic
+        backgrounds, particularly Malays, find themselves in a self-perpetuating cycle of poverty despite state-promoted
+        notions of 'meritocracy'; the idea that rewards are distributed based on effort. 
+        Educational inequality results in a situation where the low-income students are pre-disposed
+        to poorer performance, and this only exacerbates the problem of income inequality.
+      </p>
+
+    <section id="section3">
+      <div class ="horiChartContainer">
+        
+          <div id="canvas-container">
+            <div class="flourish-embed flourish-scatter" data-src="visualisation/13408411"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+          </div>
+          <div id="canvas-container">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13409239"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+          </div>
+      </div>
+      <p class="textContainerNoBg">
+        Data from Annual Household Surveys conducted by the Department of Statistics consistently show 
+        that Chinese households were the top income earners, and Malay Households were the lowest income earners.
+        Income distribution patterns also show that Malays are over-represented in the lowest-income categories (below 1000 a month)
+        and under-represented in all other categories. On the other hand, Chinese were under-represented in the
+        lowest-income categories and over-represented in higher income categories.
+      </p>
+      <div class="incomeChartContainer">
+        <div id="canvas-container">
+          <div id="racebuttons"></div>
+          <canvas id="ethnicgroups-changingcharts"></canvas>
+          <p class="sources">Source:
+            <a href="https://wid.world/country/singapore/"> World Inequality Database</a>
+          </p>
+        </div>
+      </div>
+    
+    </section>
+    <p class="textContainer">
+      Aside from ethnicity, educational qualification is a crucial factor in determining how much money one can earn.
+      However, some studies have found that the educational system in Singapore "structurally" reinforces privilege -- 
+      students from wealthier families tend to have a better chance of doing well and by extension, students from the
+      majority race, who tend to have a higher socio-economic status, have a better chance of doing well.
+    </p>
+    <section id="section3">
+    <div class="col">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/13425020"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
     </div>
+    <p class="textContainerNoBg">
+      The Census of 2020 data reveals that University graduates represented over 80% of the highest-earning income group (9000/month and over),
+      even though they only make up around 33% of the population surveyed.
+    <br><br>
+      In 2010, the percentage of Malays with university education was only 5 percent—substantially lower
+       than the 23 percent, 35 percent, and 58 percent of Chinese, Indian, and Other Singaporeans, 
+       respectively (Department of Statistics 2011). This is consistent with the expansion of 
+       educational opportunities in developed societies that has ‘disproportionately benefited 
+       children from relatively rich families’ (Blanden and Machin 2004:230). 
+       <br><br>
+        Chua (2019) proposes that Malays are less well-represented in elite junior colleges located in
+        wealthy neighborhoods because the underrepresentation of Malay residents in wealthy neighborhoods
+        could advance the perception that elite schools in these neighborhoods will be populated by students 
+        of the dominant ethnic group, making it less likely for them to choose these schools.
+    </p>  
+      </section>
+    
+      <p class="textContainer">
+        Economists (Chin and Foong 2006) have also found that proximity to elite primary schools contributes to an increase in housing prices around the island , benefiting those who can afford to buy a property near an elite school.
+      </p>
 
-    <button id="race">By race</button>
-    <button id="education">By education</button>
-    <button id="languages">By languages spoken</button>
+      <p class="textContainer">
+        Mira Debs & Hoi Shan Cheung (2021) argue that 'Singapore’s complicated primary school registration 
+        system, with many choices and a tiered preference system creates confusion allowing 
+        for structure-reinforced privilege, enabling privileged parents to boost their children’s 
+        chance of admissions into perceived ‘elite’ schools. Furthermore, the phased balloting process 
+        and the looming scarcity of seats in desirable schools hardens the perception of significant
+        differences between schools.' and highlight how systems can privilege parents with economic,
+         social and cultural capital -- what they call 'structure-reinforced privilege'.
+        <br><br>
+        Wealth inequality affects educational inequality. Wealthy parents are usually better able to deploy their economic capital in a way that fits with the rules of the educational game (Calarco 2014)
+      </p>
 
-    <div id="canvas-container">
-      <canvas id="income-by-demographic" width="400" height="400"></canvas> <!--Notice here we put the id of the "new chart" we created in the script part.-->
-      <p id="test">income by race, education level, languages spoken</p>
-    </div>
+    <section id="section3">
+      <div class="col">
+        <div class="flourish-embed flourish-map" data-src="visualisation/13421943"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </div>
+    </section>
+    
+    <p class="textContainer">
+      Finally, an investigation of data on monthly household expenditure and monthly income clearly reveals why socioeconomic
+      mobility can be so far out of reach, especially for those in the very lowest income groups.
+      While most people know that regularly saving a percentage of one's monthly income is crucial
+      in gaining wealth and establishing a safety net in case of emergency, an understated issue is 
+      the fact that having the ability to save is, in itself, a privilege.
+    </p>
+    <section id="section4">
+      <div id="canvas-container">
+        <canvas id="avgExpenditure-incomegroup-barchart"></canvas> <!--Notice here we put the id of the "new chart" we created in the script part.-->
+        <p class="sources">
+          Source: 
+          <a href="https://tablebuilder.singstat.gov.sg/table/CT/17823">Department of Statistics Singapore</a>
+          </p>
+      </div>
+      <p class="textContainerNoBg">
+        For a household that belongs to the 'below 1000' monthly income category, the average
+        monthly expenditure for this group is $1929, leaving absolutely no room for saving. In comparison,
+        a household that earns 20,000 and above each month would have an average expenditure of 10,047, which is at
+        most half of their monthly income.
+      </p>
+    </section>
+      
 
-    <div id="blocks">
-      <h3>There is no definite "poverty line" in Singapore. How do we define who is "poor" and who is not?</h3>
-      <p>we can look at things like cost of basic neccessities (housing, utilities, essential consumer goods) and who can or cannot afford them. we can also look at the proportion of household expenditure to income for each income group</p>
-    </div>
-
-    <div id="canvas-container">
-      <canvas id="avgExpenditure-incomegroup-barchart" width="400" height="400"></canvas> <!--Notice here we put the id of the "new chart" we created in the script part.-->
-    </div>
-  
-  
   </body>
 </html>
